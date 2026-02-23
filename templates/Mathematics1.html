@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Book | Details</title>
+
+  {% load static %}
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #42abbc;
+      margin: 0;
+    }
+
+    header {
+      background: #0a012d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: #e94e3c;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .details {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .details img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .info h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .info p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .action-btn {
+      margin-top: 20px;
+    }
+
+    .action-btn button {
+      background: linear-gradient(90deg, #e94e3c, #f5a623);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .action-btn button:hover {
+      transform: scale(1.05);
+    }
+
+    @media(max-width: 700px){
+      .details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="{% url 'nextbooks' %}" class="back-btn">← Back</a>
+  <h1>Physics</h1>
+</header>
+
+<div class="details">
+  <img src="{% static 'images/m1.jpg' %}" alt="Physics Book">
+
+  <div class="info">
+    <h2>Engineering Physics</h2>
+    <p>
+      This book covers core topics of Engineering Physics including:
+      Mechanics, Waves, Optics, Quantum Mechanics and Modern Physics.
+    </p>
+
+    <p><b>Condition:</b> Good</p>
+    <p><b>Available:</b> Yes</p>
+    <p><b>Rent Price:</b> ₹50 / week</p>
+    <p><b>Buy Price:</b> ₹300</p>
+
+    <div class="action-btn">
+     <a href="{% url 'rent_now' %}">
+  <button>Rent Now</button>
+</a>
+
+      <button>Buy Now</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

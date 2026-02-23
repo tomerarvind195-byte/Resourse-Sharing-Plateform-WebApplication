@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product Details | Rent & Buy Marketplace</title>
+
+<style>
+  :root {
+    --primary: #007185;
+    --accent: #ff9900;
+    --dark: #232f3e;
+    --light: #f4f5f7;
+    --success: #008a00;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: var(--light);
+    color: #333;
+  }
+  
+  /* Navbar */
+  nav {
+    background: linear-gradient(90deg, var(--dark), #05097a);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+  }
+
+  nav .logo {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  nav .links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  nav .links a:hover {
+    color: var(--accent);
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(90deg, var(--dark), hsl(214, 92%, 25%));
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Product Layout */
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .product-img {
+    flex: 1;
+    min-width: 300px;
+    background: #f8f9fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-img img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .product-img img:hover {
+    transform: scale(1.05);
+  }
+
+  .product-details {
+    flex: 1.3;
+    padding: 35px;
+  }
+
+  .product-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #222;
+  }
+
+  .price {
+    font-size: 22px;
+    color: #b12704;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .discount {
+    color: var(--success);
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .desc {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .options {
+    margin-bottom: 20px;
+  }
+
+  .options label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  select, input[type="number"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+  }
+
+  select:focus, input[type="number"]:focus {
+    border-color: var(--primary);
+  }
+
+  .btn-group {
+    margin-top: 25px;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+  }
+
+  .rent-btn {
+    background: var(--primary);
+  }
+  .rent-btn:hover {
+    background: #005e6e;
+    transform: scale(1.05);
+  }
+
+  .buy-btn {
+    background: var(--accent);
+  }
+  .buy-btn:hover {
+    background: #e68a00;
+    transform: scale(1.05);
+  }
+
+  .meta {
+    font-size: 14px;
+    color: #777;
+    margin-top: 25px;
+  }
+
+  /* Payment Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 360px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: slideDown 0.4s ease;
+  }
+
+  @keyframes slideDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .modal-content h3 {
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .modal-content select, .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .modal-content button {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background: #e68a00;
+  }
+
+  .close {
+    float: right;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .product-container {
+      flex-direction: column;
+      margin: 20px;
+    }
+    .product-details {
+      padding: 25px;
+    }
+    header {
+      font-size: 22px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Resource Sharing Platform</div>
+  <div class="links">
+    {% load static %}
+    <a href="{% url 'home' %}">🏠 Home</a>
+    <a href="{% url 'Allresourses' %}">All Resource</a>
+    <a href="{% url 'contact' %}">📞 Contact</a>
+    <a href="{% url 'askdoubt' %}">❓ Help</a>
+  </div>
+</nav>
+
+<div class="product-container">
+  <div class="product-img">
+    {% load static %}
+    <img id="{% static 'images/productImage' %}" src="hp.webp" alt="Product">
+  </div>
+
+  <div class="product-details">
+    <h2 id="productTitle">HP Pavilion 14 (Ryzen 5, 16GB RAM, 512GB SSD)</h2>
+    <p class="price" id="productPrice">₹100</p>
+    <p class="discount">20% OFF • Festival Offer!</p>
+    <p class="desc">
+      HP Pavilion 14 delivers powerful performance with AMD Ryzen 5, fast SSD storage, and excellent battery backup. Ideal for students, professionals, and creators. Includes a 1-year onsite warranty.
+    </p>
+
+    <div class="options">
+      <label for="validity">Select Duration</label>
+      <select id="validity">
+        <option value="1">1 Day</option>
+        <option value="5">5 Days</option>
+        <option value="10">10 Days</option>
+        <option value="30">30 Days</option>
+      </select>
+    </div>
+
+    <div class="options">
+      <label for="qty">Quantity</label>
+      <input type="number" id="qty" value="1" min="1">
+    </div>
+
+    <div class="btn-group">
+      <button class="btn rent-btn" onclick="openPaymentModal('rent')">Rent Now</button>
+
+    </div>
+
+    <p class="meta">✔ Free Delivery • ⏱️ 24-hour Service • 💬 24x7 Support</p>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Payment Options</h3>
+    <select id="paymentMethod">
+      <option>UPI</option>
+      <option>Credit Card</option>
+      <option>Debit Card</option>
+      <option>Net Banking</option>
+      <option>Cash on Delivery</option>
+    </select>
+    <input type="text" id="details" placeholder="Enter payment details">
+    <button onclick="confirmPayment()">Confirm Payment</button>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("paymentModal");
+  let actionType = "";
+
+  function openPaymentModal(type) {
+    actionType = type;
+    modal.style.display = "flex";
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  function confirmPayment() {
+    const payment = document.getElementById("paymentMethod").value;
+    const validity = document.getElementById("validity").value;
+    const qty = document.getElementById("qty").value;
+    alert(`✅ ${actionType === 'buy' ? 'Purchase' : 'Rental'} Confirmed!\n\nPayment Mode: ${payment}\nDuration: ${validity} days\nQuantity: ${qty}`);
+    closeModal();
+  }
+
+  window.onclick = function(e) {
+    if (e.target === modal) closeModal();
+  }
+
+  // Load dynamic product data from URL if available
+  const urlParams = new URLSearchParams(window.location.search);
+  const product = urlParams.get('product');
+  const productData = {
+    dell: {
+      title: "Dell Inspiron 15 (i5, 8GB RAM, 512GB SSD)",
+      price: "₹48,000",
+      img: "https://images.unsplash.com/photo-1587202372775-98927fdbd2d0?w=500"
+    },
+    hp: {
+      title: "HP Pavilion 14 (Ryzen 5, 16GB RAM, 512GB SSD)",
+      price: "₹55,000",
+      img: "https://images.unsplash.com/photo-1585386959984-a4155223f9c4?w=500"
+    },
+    lenovo: {
+      title: "Lenovo ThinkPad E14 (i7, 16GB RAM, 1TB SSD)",
+      price: "₹62,000",
+      img: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=500"
+    }
+  };
+
+  if (product && productData[product]) {
+    document.getElementById("productTitle").innerText = productData[product].title;
+    document.getElementById("productPrice").innerText = productData[product].price;
+    document.getElementById("productImage").src = productData[product].img;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #eef2f5;
+        }
+        form {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+        button {
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Edit Profile</h2>
+
+    <input type="text" name="mobile" placeholder="Mobile" value="{{ profile.mobile }}">
+    <input type="text" name="roll" placeholder="Roll No" value="{{ profile.roll }}">
+    <input type="text" name="email" placeholder="Email" value="{{ profile.email }}">
+    <input type="text" name="year" placeholder="Year" value="{{ profile.year }}">
+    <input type="text" name="branch" placeholder="Branch" value="{{ profile.branch }}">
+    <input type="text" name="hostel" placeholder="Hostel" value="{{ profile.hostel }}">
+
+    <textarea name="address" placeholder="Address">{{ profile.address }}</textarea>
+
+    <input type="file" name="photo">
+
+    <button type="submit">Save Changes</button>
+</form>
+
+</body>
+</html>

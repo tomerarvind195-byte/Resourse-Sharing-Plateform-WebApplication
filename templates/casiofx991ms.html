@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Casio fx-991MS | Rent Calculator</title>
+
+<style>
+:root {
+  --primary:#007185;
+  --accent:#ff9900;
+  --dark:#232f3e;
+  --light:#f4f5f7;
+  --success:#008a00;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:var(--light)}
+
+nav{
+  background:linear-gradient(90deg,var(--dark),#05097a);
+  color:#fff;display:flex;justify-content:space-between;
+  padding:15px 40px
+}
+nav a{color:white;text-decoration:none;margin-left:20px}
+
+header{
+  background:linear-gradient(90deg,var(--dark),#0a1a8a);
+  color:white;text-align:center;padding:18px;font-size:24px
+}
+
+.product-container{
+  display:flex;flex-wrap:wrap;
+  max-width:1100px;margin:40px auto;
+  background:#fff;border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.15)
+}
+
+.product-img{
+  flex:1;display:flex;
+  align-items:center;justify-content:center;
+  background:#f8f9fb
+}
+.product-img img{width:80%;border-radius:10px}
+
+.product-details{flex:1.2;padding:35px}
+.product-details h2{font-size:26px}
+.price{color:#b12704;font-size:22px;font-weight:600}
+.discount{color:var(--success);margin:8px 0}
+.desc{color:#555;margin:15px 0}
+
+select,input{
+  width:100%;padding:10px;
+  border-radius:6px;border:1px solid #ccc
+}
+
+.btn{
+  padding:12px 25px;border:none;
+  border-radius:8px;color:white;
+  font-weight:600;cursor:pointer
+}
+.rent-btn{background:var(--primary)}
+.rent-btn:hover{background:#005e6e}
+
+.modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;align-items:center
+}
+.modal-content{
+  background:white;padding:30px;
+  width:350px;border-radius:15px
+}
+.close{float:right;font-size:22px;color:red;cursor:pointer}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Resource Sharing Platform</div>
+  <div>
+    {% load static %}
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'Allresourses' %}">Resources</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </div>
+</nav>
+
+<header>Casio fx-991MS Scientific Calculator</header>
+
+<div class="product-container">
+  <div class="product-img">
+    {% load static %}
+    <img id="productImage" src="{% static fx 991ms.jpg' %}">
+  </div>
+
+  <div class="product-details">
+    <h2 id="productTitle">Casio fx-991MS Scientific Calculator</h2>
+    <p class="price" id="productPrice">₹25 / Day</p>
+    <p class="discount">Perfect for Exams & Engineering 📐</p>
+
+    <p class="desc">
+      Casio fx-991MS is a non-programmable scientific calculator approved for
+      board exams and competitive exams. Supports algebra, trigonometry,
+      statistics, calculus, and more. Ideal for students.
+    </p>
+
+    <label>Select Duration</label>
+    <select id="validity">
+      <option value="1">1 Day</option>
+      <option value="7">7 Days</option>
+      <option value="30">30 Days</option>
+    </select>
+
+    <br><br>
+
+    <label>Quantity</label>
+    <input type="number" id="qty" value="1" min="1">
+
+    <br><br>
+
+    <button class="btn rent-btn" onclick="openPaymentModal('rent')">
+      Rent Now
+    </button>
+
+    <p class="meta">✔ Exam Approved • 🚀 Fast Delivery • 📞 24x7 Support</p>
+  </div>
+</div>
+
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3>Payment</h3>
+    <select id="paymentMethod">
+      <option>UPI</option>
+      <option>Cash on Delivery</option>
+    </select>
+    <button onclick="confirmPayment()">Confirm</button>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById("paymentModal");
+let actionType="";
+
+function openPaymentModal(type){
+  actionType=type;
+  modal.style.display="flex";
+}
+function closeModal(){
+  modal.style.display="none";
+}
+function confirmPayment(){
+  alert("✅ Calculator rented successfully!");
+  closeModal();
+}
+</script>
+
+</body>
+</html>

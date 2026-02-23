@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Submitted</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #42abbc, #2b6b70);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .success-box {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            max-width: 420px;
+            width: 90%;
+        }
+
+        .success-box h1 {
+            color: #2b6b70;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .success-box p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .success-box a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #42abbc;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .success-box a:hover {
+            background-color: #2b6b70;
+            transform: translateY(-2px);
+        }
+
+        .check {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="success-box">
+        <div class="check">✅</div>
+        <h1>Request Submitted Successfully!</h1>
+        <p>We will contact you soon. Thank you for using our platform.</p>
+        <a href="{% url 'borrowitem' %}">Request Another Item</a>
+    </div>
+
+</body>
+</html>

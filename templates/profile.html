@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #e7eef4;
+        }
+        .card {
+            width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>{{ request.user.username }}</h2>
+
+    {% if profile.photo %}
+        <img src="{{ profile.photo.url }}">
+    {% else %}
+        <p>No Photo</p>
+    {% endif %}
+    
+    <p><b>Mobile:</b> {{ profile.mobile }}</p>
+    <p><b>Roll:</b> {{ profile.roll }}</p>
+    <p><b>Email:</b> {{ request.user.email  }}</p>
+    <p><b>Year:</b> {{ profile.year }}</p>
+    <p><b>Branch:</b> {{ profile.branch }}</p>
+    <p><b>Hostel:</b> {{ profile.hostel }}</p>
+    <p><b>Address:</b> {{ profile.address }}</p>
+    <a href="{% url 'change_password' %}">Change Password</a>
+    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    <a href="{% url 'home' %}">Home</a>
+</div>
+
+</body>
+</html>

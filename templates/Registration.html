@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background: #3860e3;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(to bottom, #4fc3f7, #81d4fa);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0b0b0b;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #0e0d0d;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .form-actions {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .form-actions input {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .form-actions input[type="submit"] {
+            background-color: #101211;
+            color: #fff;
+        }
+
+        .form-actions input[type="reset"] {
+            background-color: #f06292;
+            color: #fff;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .captcha {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .captcha-box {
+            display: inline-block;
+            padding: 8px;
+            background: white;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+    <form method="POST" action="{% url 'register' %}">
+
+    {% csrf_token %}
+
+    <label>Select Year:</label>
+    <select name="year" required>
+        <option value="">--Select--</option>
+        <option value="1">1st Year</option>
+        <option value="2">2nd Year</option>
+        <option value="3">3rd Year</option>
+        <option value="4">4th Year</option>
+    </select>
+
+    <label>Student Roll No:</label>
+    <input type="text" name="roll" required>
+
+    <label>Mobile Number:</label>
+    <input type="number" name="mobile" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Name (Username):</label>
+    <input type="text" name="username" required>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female" required> Female
+
+    <label>Create Password:</label>
+    <input type="password" name="password" required>
+
+    <label>Confirm Password:</label>
+    <input type="password" name="confirm" required>
+
+    <label>Hostel No:</label>
+    <input type="radio" name="hostel" value="BH1" required> BH1
+    <input type="radio" name="hostel" value="BH2"> BH2
+    <input type="radio" name="hostel" value="BH3"> BH3
+    <input type="radio" name="hostel" value="BH4"> BH4
+    <input type="radio" name="hostel" value="GH1"> GH1
+
+    <label>Branch:</label>
+    <select name="branch" required>
+        <option value="">Select</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+    </select>
+
+    <label>Select Your Choice:</label>
+    <select name="choice" required>
+        <option value="">Select</option>
+        <option value="Share">Share</option>
+        <option value="Borrow">Borrow</option>
+        <option value="Both">Both</option>
+    </select>
+
+    <label>Address:</label>
+    <textarea name="address" required></textarea>
+
+    <!-- ✅ CAPTCHA -->
+    <div style="margin:10px 0;">
+        <label>
+            <input type="checkbox" name="captcha" required>
+            I'm not a robot
+        </label>
+    </div>
+
+    <input type="submit" value="Register">
+</form>
+
+{% if messages %}
+  {% for message in messages %}
+    <p style="color:red">{{ message }}</p>
+  {% endfor %}
+{% endif %}
+
+
+        <div class="links">
+            {% load static %}
+         <a href="{% url 'Login' %}">Back to Login Page</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Books | Book Rental</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #87CEEB;
+      margin: 0;
+      padding: 0;
+    }
+     /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(33, 98, 108, 0.6);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      display: inline;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #ffd700;
+    }
+
+    header {
+      position: relative;
+      background-color: #0a012d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    header a {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #e94e3c;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    header a:hover {
+      background-color: #b6d130;
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .book {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-5px);
+    }
+
+    .book img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .book h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .rent-btn {
+      background: linear-gradient(90deg, #e94e3c, #f5a623);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .rent-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #f5a623, #b6d130);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #eee;
+      color: #444;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+   
+  <div class="navbar">
+    <div class="logo">RSP notes</div>
+    <ul>
+      {% load static %}
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'search' %}">Search</a></li>
+      
+
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="book">
+      {% load static %}
+      <img src="{% static 'images/notebook.jpg' %}" alt="Ikigai">
+
+      <h3>Physics</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1nlLpE6grlCqEuh1EoNI1EBZWfiUp3YL4?usp=drive_link'">Rent/Buy</button>
+    </div>
+      
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Math 1">
+      <h3>Mathematics 1</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1pUaAfk32L-_k2jarXAa-TWFfrAGP-iVA?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Math 2">
+      <h3>Mathematics 2</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1nC5gbRbMeSCb0f97ZfLN4eKiBTl_r02M?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Math 3">
+      <h3>Mathematics 3</h3>
+      <button class="rent-btn" onclick="window.location.href='book-details.html'">Rent/Buy</button>
+    </div>
+    
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Math 4">
+      <h3>Mathematics 4</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1-YH8RPCoIV-ahMTmCwmUeMbIKiFg9Aco?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Chemistry">
+      <h3>Chemistry</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1mjRb0cu1gxTCW4XjPQ_wrJi1Zn3OaW2i?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Environment & Ecology">
+      <h3>Environment & Ecology</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1n9Q_9lMeh4iv6elmnnQzWS6NeG7NMdcZ?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Electrical Engineering">
+      <h3>Electrical Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1n41A-OGPeKOuQcrb--H9UjlPi_pF2dIe?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Electronic Engineering">
+      <h3>Electronic Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1mlRqZRcpayVEnwR9ltGtIkYIpuEqmmJT?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Olympus">
+      <h3>Soft skills</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1nY8NQAdohYkwSZwSjd2ooqz3D99BGZSV?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>Machinical Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1nH6U9sCLHDzP2q1DSUNjLh-UEZPVFRWh?usp=drive_link'">Rent/Buy</button>
+    </div>
+    
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>PPS</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1nPKApC1998LNS_RLLBy_zyxL8HIeCAaX?usp=drive_link'">Rent/Buy</button>
+    </div>
+          <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>Digital Electronic</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1Ebls9qWiYW-fCYyGjsWYA-2BMr68nhDT?usp=drive_link'">Rent/Buy</button>
+    </div>
+                <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>C0A</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1YwCk1UYJYcQLIl1TAJobGXnvV2L8C6UZ?usp=drive_link'">Rent/Buy</button>
+    </div>
+                   <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Geronimo Stilton">
+      <h3>DSTL</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1MdiNc0zJwWffkcDO7ChUE07tPeBjG0JA?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Olympus">
+      <h3>DS<h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1rNfBkbjYK721ERpvPGSb1rkgwBa3rCpG?usp=drive_link'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>Python</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1HZ4XG9gaKp7Q0kOrkSzr2rnIbsam56at?usp=drive_link'">Rent/Buy</button>
+    </div>
+    
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>Technical Cummunication</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1U05T_TZ6N2-EE0sEl1wVuMeocXEyI8TO?usp=drive_link'">Rent/Buy</button>
+    </div>
+          <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>Human value</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1-vasO67UoBpB4eI94XdOL7M_xXg3Rc9z?usp=drive_link'">Rent/Buy</button>
+    </div>
+                <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="Percy Jackson">
+      <h3>cyber security</h3>
+      <button class="rent-btn" onclick="window.location.href='https://drive.google.com/drive/folders/12ftAqd_7E5GSxH1r-Zu8zLYEQtol_Oqw?usp=drive_link'">Rent/Buy</button>
+    </div>
+      
+    <div class="book">
+      <img src="{% static 'images/notebook.jpg' %}" alt="City of Glass">
+      <h3>DBMS </h3>
+      <button class="rent-btn" onclick="window.location.href='book-details.html'">Rent</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Book Rental Platform | Designed by You For helping other students 
+  </footer>
+
+</body>
+</html>

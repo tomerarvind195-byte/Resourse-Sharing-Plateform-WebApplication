@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Resource Sharing Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #42abbc;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #368a94;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #2b6b70;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .about-section {
+            text-align: center;
+        }
+
+        .about-section h2 {
+            color: #42abbc;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .benefits {
+            margin-top: 40px;
+        }
+
+        .benefits h2 {
+            color: #42abbc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .benefits ul {
+            list-style: square;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .benefits li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #368a94;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Resource Sharing Platform</h1>
+    </header>
+
+    <nav>
+        {% load static %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutpage' %}">About</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>
+                Resource Sharing Platform is a dedicated service for college students to share and rent essential resources like books, notebooks, laptops, calculators, and other necessary items. 
+                Our goal is to help students who cannot afford certain study materials and devices by providing affordable access.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>Who We Help</h2>
+            <p>
+                This platform is especially designed for financially weak students who need support in accessing educational resources. 
+                By connecting students who have extra resources with those in need, we promote collaboration, affordability, and equal opportunities in education.
+            </p>
+        </div>
+
+        <div class="benefits">
+            <h2>Benefits of Our Platform</h2>
+            <ul>
+                <li>Affordable access to laptops, calculators, books, and other study materials.</li>
+                <li>Encourages sharing and collaboration among students.</li>
+                <li>Helps financially weak students continue their education smoothly.</li>
+                <li>Reduces unnecessary expenses for students.</li>
+                <li>Promotes responsible use of resources within the college community.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Resource Sharing Platform. All rights reserved.
+    </footer>
+
+</body>
+</html>

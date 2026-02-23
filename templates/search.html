@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resource Sharing Platform | Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    nav {
+      background: #1a73e8;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .search-section {
+      text-align: center;
+      padding: 48px 16px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    input[type="text"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 10px 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    select {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      font-size: 15px;
+    }
+
+    button {
+      background: #1a73e8;
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .results {
+      max-width: 720px;
+      margin: 28px auto 80px;
+      padding: 0 16px;
+    }
+
+    .result-item {
+      background: #fff;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .result-item:hover {
+      transform: translateY(-2px);
+      background: #f0f4ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      color: #666;
+      border-top: 1px solid #eee;
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Resources Sharing Platform</div>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'Allresourses' %}">Resources</a></li>
+    <li><a href="{% url 'aboutpage' %}">About</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- SEARCH SECTION -->
+<section class="search-section">
+  <h1>Find the Right Resource Instantly</h1>
+  <p>Search books, notes, laptops, calculators & more</p>
+
+  <form id="searchForm">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search resources..." />
+      <select id="categorySelect">
+        <option value="all">All Categories</option>
+        <option value="books">Books</option>
+        <option value="notes">Notes</option>
+        <option value="laptop">Laptop</option>
+        <option value="calculator">Calculator</option>
+      </select>
+      <button type="submit">Search</button>
+    </div>
+  </form>
+</section>
+
+<!-- RESULTS -->
+<div class="results" id="resultsContainer"></div>
+
+<footer>
+  © 2025 Resources Sharing Platform | Empowering Knowledge Exchange
+</footer>
+
+<!-- ✅ YOUR SCRIPT (FIXED + WORKING) -->
+<script>
+  const form = document.getElementById('searchForm');
+  const resultsContainer = document.getElementById('resultsContainer');
+
+const resources = [
+{
+  title: 'Physics Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1nlLpE6grlCqEuh1EoNI1EBZWfiUp3YL4'
+},
+{
+  title: 'Mathematics 1 Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1pUaAfk32L-_k2jarXAa-TWFfrAGP-iVA'
+},
+{
+  title: 'Mathematics 2 Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1nC5gbRbMeSCb0f97ZfLN4eKiBTl_r02M'
+},
+{
+  title: 'Mathematics 3 Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1HZ4XG9gaKp7Q0kOrkSzr2rnIbsam56at'
+},
+{
+  title: 'Mathematics 4 Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1-YH8RPCoIV-ahMTmCwmUeMbIKiFg9Aco'
+},
+{
+  title: 'Chemistry Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1mjRb0cu1gxTCW4XjPQ_wrJi1Zn3OaW2i'
+},
+{
+  title: 'Environment & Ecology Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1n9Q_9lMeh4iv6elmnnQzWS6NeG7NMdcZ'
+},
+{
+  title: 'Electrical Engineering Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1n41A-OGPeKOuQcrb--H9UjlPi_pF2dIe'
+},
+{
+  title: 'Electronic Engineering Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1mlRqZRcpayVEnwR9ltGtIkYIpuEqmmJT'
+},
+{
+  title: 'Soft skills Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1nY8NQAdohYkwSZwSjd2ooqz3D99BGZSV'
+},
+{
+  title: 'Machinical Engineering Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1nH6U9sCLHDzP2q1DSUNjLh-UEZPVFRWh'
+},
+{
+  title: 'PPS Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1nPKApC1998LNS_RLLBy_zyxL8HIeCAaX'
+},
+{
+  title: 'Digital Electronic Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1Ebls9qWiYW-fCYyGjsWYA-2BMr68nhDT'
+},
+{
+  title: ' COA  Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1YwCk1UYJYcQLIl1TAJobGXnvV2L8C6UZ'
+},
+{
+  title: 'DSTL Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1MdiNc0zJwWffkcDO7ChUE07tPeBjG0JA'
+},
+{
+  title: 'DS Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1rNfBkbjYK721ERpvPGSb1rkgwBa3rCpG'
+},
+{
+  title: 'Python Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1HZ4XG9gaKp7Q0kOrkSzr2rnIbsam56at'
+},
+{
+  title: 'Technical Cummunication Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1U05T_TZ6N2-EE0sEl1wVuMeocXEyI8TO'
+},
+{
+  title: 'Human value Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1-vasO67UoBpB4eI94XdOL7M_xXg3Rc9z'
+},
+{
+  title: 'cyber security Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/12ftAqd_7E5GSxH1r-Zu8zLYEQtol_Oqw'
+},
+{
+  title: 'DBMS Notes for Beginners',
+  type: 'notes',
+  url: 'https://drive.google.com/drive/folders/1HZ4XG9gaKp7Q0kOrkSzr2rnIbsam56at'
+},
+
+
+  { title: 'Physics Complete Book', type: 'books', url: '/Physics/' },
+  { title: 'Mathematics 1 Complete Book', type: 'books', url: '/Mathematics1/' },
+  { title: 'Mathematics 2 Complete Book', type: 'books', url: '/Mathematics2/' },
+  { title: 'Mathematics 3 Complete Book', type: 'books', url: '/Mathematics3/' },
+  { title: 'Mathematics 4 Complete Book', type: 'books', url: '/Mathematics4/' },
+  { title: 'Chemistry Complete Book', type: 'books', url: '/Chemistry/' },
+  { title: 'Environment & Ecology Complete Book', type: 'books', url: '/Environment & Ecology/' },
+  { title: 'Electrical Engineering Complete Book', type: 'books', url: '/Electrical Engineering/' },
+  { title: 'Electronic Engineering Complete Book', type: 'books', url: '/Electronic Engineering/' },
+  { title: 'Soft skills Complete Book', type: 'books', url: '/Soft skills/' },
+  { title: 'Machinical Engineering Complete Book', type: 'books', url: '/Machinical Engineering/' },
+  { title: 'PPS Complete Book', type: 'books', url: '/PPS/' },
+  { title: 'Digital Electronic Complete Book', type: 'books', url: '/Digital Electronic/' },
+  { title: 'COA Complete Book', type: 'books', url: '/COA/' },
+  { title: 'DSTL Complete Book', type: 'books', url: '/DSTL/' },
+  { title: 'DS Complete Book', type: 'books', url: '/DS/' },
+  { title: 'Python Complete Book', type: 'books', url: '/Python/' },
+  { title: 'Technical Cummunication Complete Book', type: 'books', url: '/Technical Cummunication/' },
+  { title: 'Human value Complete Book', type: 'books', url: '/Human value/' },
+  { title: 'cyber security Complete Book', type: 'books', url: '/cyber security/' },
+  { title: 'DBMS Complete Book', type: 'books', url: '/DBMS/' },
+
+
+  { title: 'Laptop Dell Inspiron', type: 'laptop', url: '/dellnext/' },
+  { title: 'HP Pavilion', type: 'laptop', url: '/hpnext/' },
+  { title: 'Lenovo ThinkPad', type: 'laptop', url: '/lenovo/' },
+  { title: 'Apple MacBook Air M2', type: 'laptop', url: '/applenext/' },
+
+
+  { title: 'Casio FX-991ES Calculator', type: 'calculator', url: '/casiofx991es/' },
+  { title: 'Casio FX-991ms Calculator', type: 'calculator', url: '/casiofx991ms/' },
+  { title: 'Casio FX-9960g Calculator', type: 'calculator', url: '/casiofx9960g/' },
+  { title: 'Simple Calculator', type: 'calculator', url: '/simplecalculator/' },
+];
+
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const category = document.getElementById('categorySelect').value;
+
+    resultsContainer.innerHTML = '';
+
+    if (!query) {
+      resultsContainer.innerHTML = '<p>Please enter a search term.</p>';
+      return;
+    }
+
+    const filtered = resources.filter(function (item) {
+      const matchCategory = category === 'all' || item.type === category;
+      const matchQuery = item.title.toLowerCase().includes(query);
+      return matchCategory && matchQuery;
+    });
+
+    if (filtered.length === 0) {
+      resultsContainer.innerHTML = '<p>No results found.</p>';
+      return;
+    }
+
+    filtered.forEach(function (item) {
+      const div = document.createElement('div');
+      div.className = 'result-item';
+      div.textContent = item.title + " (" + item.type + ")";
+
+      div.addEventListener('click', function () {
+        window.location.href = item.url;
+      });
+
+      resultsContainer.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message Sent | Resource Sharing Platform</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #42abbc, #2b6b70);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 90%;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #2b6b70;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background-color: #1f4d50;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Message Sent Successfully!</h1>
+    <p>Thank you for reaching out to us. Our team has received your message and will get back to you shortly.</p>
+    <div class="buttons">
+      {% load static %}
+      <a href="{% url 'home' %}">🏠 Go to Home</a>
+      <a href="{% url 'services' %}">🔍 Explore Services</a>
+      <a href="{% url 'community' %}">💬 Join Community</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Resource Sharing Platform. All rights reserved.
+  </footer>
+
+</body>
+</html>

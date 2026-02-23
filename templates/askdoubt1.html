@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Successful | Resource Sharing Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #42abbc, #2b6b70);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .thank-you-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .thank-you-box h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-box p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .thank-you-box a {
+            text-decoration: none;
+            background-color: white;
+            color: #42abbc;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .thank-you-box a:hover {
+            background-color: #f0f0f0;
+            color: #2b6b70;
+        }
+
+        @media (max-width: 600px) {
+            .thank-you-box h1 {
+                font-size: 2em;
+            }
+
+            .thank-you-box p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-box">
+        <h1>Thank You!</h1>
+        <p>Your doubt has been successfully submitted.</p>
+        <p>Our mentors and community members will review it and respond shortly.</p>
+        {% load static %}
+        <a href="{% url 'community' %}">Go to Community Page</a>
+    </div>
+
+</body>
+</html>

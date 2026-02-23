@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Books | Book Rental</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #42abbc;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      background-color: #0a012d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* Search button - left */
+    .search-link {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #e94e3c; /* red */
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .search-link:hover {
+      background-color: #b6d130; /* yellowish-green */
+      transform: scale(1.05);
+    }
+
+    /* Home button - right */
+    .home-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #3c8ed9; /* blue */
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .home-link:hover {
+      background-color: #35baf6; /* lighter blue */
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .book {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-5px);
+    }
+
+    .book img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .book h3 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .rent-btn {
+      background: linear-gradient(90deg, #e94e3c, #f5a623);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    .rent-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #f5a623, #b6d130);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #eee;
+      color: #444;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    {% load static %}
+    <a href="{% url 'home' %}" class="home-link">home</a>
+    <h1>Books</h1>
+    <a href="{% url 'search' %}" class="search-link">search</a>
+  </header>
+
+  <div class="container">
+    <div class="book">
+      {% load static %}
+      <img src="{% static 'images/physics.jpg' %}" alt="Ikigai">
+      <h3>Physics</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Physics' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/m1.jpg' %}" alt="Math 1">
+      <h3>Mathematics 1</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Mathematics1' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/m2.jpg' %}" alt="Math 2">
+      <h3>Mathematics 2</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Mathematics2' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/m3.jpg' %}" alt="Math 3">
+      <h3>Mathematics 3</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Mathematics3' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/m4.jpg' %}" alt="Math 4">
+      <h3>Mathematics 4</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Mathematics4' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/chemistry.jpg' %}" alt="Chemistry">
+      <h3>Chemistry</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Chemistry' %}'">Rent/Buy</button>
+    </div>
+    <div class="book">
+      <img src="{% static 'images/envoronment.jpg' %}" alt="Environment & Ecology">
+      <h3>Environment & Ecology</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Environment&Ecology' %}'">Rent/Buy</button>
+
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/electrical.jpg' %}" alt="Electrical Engineering">
+      <h3>Electrical Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'ElectricalEngineering' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/electronic.jpg' %}" alt="Electronic Engineering">
+      <h3>Electronic Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'ElectronicEngineering' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/soft skills.jpg' %}" alt="Olympus">
+      <h3>Soft skills</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Softskills' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/machanical.jpg' %}" alt="Percy Jackson">
+      <h3>Machinical Engineering</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'MachinicalEngineering' %}'">Rent/Buy</button>
+    </div>
+    
+    <div class="book">
+      <img src="{% static 'images/pps.jpg' %}" alt="Percy Jackson">
+      <h3>PPS</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'PPS' %}'">Rent/Buy</button>
+    </div>
+          <div class="book">
+      <img src="{% static 'images/digital.jpg' %}" alt="Percy Jackson">
+      <h3>Digital Electronic</h3>
+      <button class="rent-btn" onclick="window.location.href='DigitalElectronic'">Rent/Buy</button>
+    </div>
+                <div class="book">
+      <img src="{% static 'images/coa.jpg' %}" alt="Percy Jackson">
+      <h3>C0A</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'COA' %}'">Rent/Buy</button>
+    </div>
+                   <div class="book">
+      <img src="{% static 'images/dstl.jpg' %}" alt="Geronimo Stilton">
+      <h3>DSTL</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'DSTL' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/ds.jpg' %}" alt="Olympus">
+      <h3>DS<h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'DS' %}'">Rent/Buy</button>
+    </div>
+
+    <div class="book">
+      <img src="{% static 'images/pythom.jpg' %}" alt="Percy Jackson">
+      <h3>Python</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Python' %}'">Rent/Buy</button>
+    </div>
+    
+    <div class="book">
+      <img src="{% static 'images/technical.jpg' %}" alt="Percy Jackson">
+      <h3>Technical Cummunication</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'Technical' %}'">Rent/Buy</button>
+    </div>
+          <div class="book">
+      <img src="{% static 'images/human.jpg' %}" alt="Percy Jackson">
+      <h3>Human value</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'HumanValue' %}'">Rent/Buy</button>
+    </div>
+                <div class="book">
+      <img src="{% static 'images/cyber security.jpg' %}" alt="Percy Jackson">
+      <h3>cyber security</h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'cybersecurity' %}'">Rent/Buy</button>
+    </div>
+      
+    <div class="book">
+      <img src="{% static 'images/dbms.jpg' %}" alt="City of Glass">
+      <h3>DBMS </h3>
+      <button class="rent-btn" onclick="window.location.href='{% url 'DBMS' %}'">Rent</button>
+    </div>
+  
+
+    <!-- Add remaining books similarly -->
+  </div>
+
+  <footer>
+    © 2025 Book Rental Platform | Designed by You For helping other students 
+  </footer>
+
+</body>
+</html>

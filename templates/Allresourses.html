@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Sharing Platform</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li {
+      display: inline;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #ffd700;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffae00;
+    }
+
+    /* Items Section */
+    .items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px;
+    }
+
+    .card {
+      background: white;
+      color: black;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">RSP</div>
+    <ul>
+      {% load static %}
+      <li><a href="{% url  'home' %}">Home</a></li>
+      <li><a href="{% url 'Allresourses' %}">Categories</a></li>
+      
+
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Resource Sharing Platform</h1>
+    <p>Borrow laptops, notebooks, calculators, and more from your hostel community.</p>
+   
+  </div>
+
+  <!-- Items Section -->
+  <div class="items">
+    <div class="card">
+      <a href="{% url 'nextlaptop' %}" class="card-link">
+      <img src="https://img.icons8.com/color/96/laptop.png" alt="Laptop">
+      <h3>Laptop</h3>
+      <p>Borrow laptops for study or project work.</p>
+    </div></a>
+
+     <a href="{% url 'nextnotes' %}" class="card-link">
+    <div class="card">
+      {% load static %}
+      <img src="{% static 'images/notebook.jpg' %}" alt="Notebook">
+      <h3>Notebooks</h3>
+      <p>Get notebooks for assignments and notes.</p>
+    </div></a>
+ 
+     <a href="{% url 'nextcalculator' %}" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/calculator.png" alt="Calculator">
+      <h3>Calculator</h3>
+      <p>Borrow calculators for exams and practice.</p>
+    </div></a>
+
+ <a href="{% url 'nextbooks' %}" class="card-link">
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/books.png" alt="nextbooks.html">
+      <h3>Books</h3>
+      <p>Access reference and course books easily.</p>
+    </div></a>
+     
+  </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow an Item | Resource Sharing Platform</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #42abbc, #2b6b70);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.3em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #368a94;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2b6b70;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h2 {
+            color: #42abbc;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .borrow-form {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .borrow-form h3 {
+            color: #42abbc;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .borrow-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .borrow-form input,
+        .borrow-form select,
+        .borrow-form textarea {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            resize: none;
+        }
+
+        .borrow-form button {
+            background-color: #42abbc;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .borrow-form button:hover {
+            background-color: #2b6b70;
+        }
+
+        footer {
+            background-color: #368a94;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .intro h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Borrow an Item</h1>
+        <p>Request books, laptops, or study materials from fellow students</p>
+    </header>
+
+    <nav>
+        {% load static %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutpage' %}">About</a>
+        <a href="{% url 'community' %}">Community</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'borrowitem' %}">Borrow Item</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Need a Resource?</h2>
+            <p>
+                Fill out the form below to request the item you need. Our platform will connect you with students who can share it with you, making education accessible for everyone.
+            </p>
+        </div>
+
+        <div class="borrow-form">
+            <h3>Request an Item</h3>
+            <form method="post" action="{% url 'borrowitem' %}">
+    {% csrf_token %}
+
+    <input type="text" name="item_name"
+           placeholder="Item Name (e.g., Physics Book, Laptop)" required>
+
+    <select name="category" required>
+        <option value="">Select Category</option>
+        <option value="book">Book / Notebook</option>
+        <option value="laptop">Laptop</option>
+        <option value="calculator">Calculator</option>
+        <option value="other">Other</option>
+    </select>
+
+    <input type="number" name="quantity"
+           placeholder="Quantity Needed" min="1" required>
+
+    <textarea name="description" rows="5"
+              placeholder="Any specific requirements or details" required></textarea>
+
+    <input type="text" name="contact_info"
+           placeholder="Your Contact Info (Email / Phone)" required>
+
+    <button type="submit">Request Item</button>
+</form>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Doubt | Resource Sharing Platform</title>
+    <style>
+        /* Reset default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #42abbc, #2b6b70);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.3em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #368a94;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2b6b70;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            color: #42abbc;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .doubt-form {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .doubt-form h3 {
+            color: #42abbc;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .doubt-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doubt-form input,
+        .doubt-form textarea,
+        .doubt-form select {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            resize: none;
+        }
+
+        .doubt-form button {
+            background-color: #42abbc;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .doubt-form button:hover {
+            background-color: #2b6b70;
+        }
+
+        footer {
+            background-color: #368a94;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .intro h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ask Your Doubt</h1>
+        <p>Get answers from peers and mentors quickly</p>
+    </header>
+
+    <nav>
+        {% load static %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutpage' %}">About</a>
+        <a href="{% url 'community' %}">Community</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'askdoubt' %}">Ask Doubt</a>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Need Help With a Question?</h2>
+            <p>
+                Submit your academic doubts here. Whether it’s a concept, problem, or assignment question, 
+                our community of students and mentors will guide you toward the right solution.
+            </p>
+        </div>
+
+        <div class="doubt-form">
+            <h3>Submit Your Doubt</h3>
+         <form method="post" action="{% url 'askdoubt' %}">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <select name="subject" required>
+        <option value="">Select Subject</option>
+        <option value="math">Mathematics</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="computer">Computer Science</option>
+        <option value="other">Other</option>
+    </select>
+
+    <textarea name="doubt" rows="6" placeholder="Describe your doubt in detail" required></textarea>
+
+    <button type="submit">Submit Doubt</button>
+</form>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Resource Sharing Platform. All rights reserved.
+    </footer>
+
+</body>
+</html>

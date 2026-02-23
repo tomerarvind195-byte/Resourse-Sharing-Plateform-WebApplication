@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Community | Resources Sharing Platform</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f9fafc;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .container img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #1a1a2e;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .highlights {
+      background-color: #f0f2ff;
+      border-left: 5px solid #6c63ff;
+      border-radius: 8px;
+      padding: 15px 20px;
+      text-align: left;
+      margin: 25px auto;
+      max-width: 700px;
+    }
+
+    .highlights ul {
+      list-style-type: square;
+      margin-left: 25px;
+      color: #444;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      background-color: #6c63ff;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #574de0;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      background-color: #1a1a2e;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Welcome to Our Learning Community</header>
+
+  <div class="container">
+    <img src="community.jpg" alt="Community Icon">
+    <h1>You’ve Successfully Joined the RSP Community!</h1>
+    <p>
+      Thank you for becoming a part of the <b>Resources Sharing Platform</b>.  
+      You are now connected with thousands of students who share, learn, and grow together.
+      Start exploring, collaborating, and making education more meaningful.
+    </p>
+
+    <div class="highlights">
+      <h3>Here’s What You Can Do Next:</h3>
+      <ul>
+        <li>Share your notes, books, or study materials with peers.</li>
+        <li>Borrow educational resources from others easily.</li>
+        <li>Ask academic doubts and get quick, verified answers.</li>
+        <li>Engage in community discussions to expand your knowledge.</li>
+      </ul>
+    </div>
+
+    <div class="buttons">
+      {% load static %}
+      <a href="{% url 'community' %}">Back to Community</a>
+      <a href="{% url 'shareitem' %}">Share an Item</a>
+      <a href="{% url 'borrowitem' %}">Borrow Resources</a>
+      <a href="{% url 'askdoubt' %}">Ask a Doubt</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Resources Sharing Platform | Together We Learn & Grow
+  </footer>
+
+</body>
+</html>

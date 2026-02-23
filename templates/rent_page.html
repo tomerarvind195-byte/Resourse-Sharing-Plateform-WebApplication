@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rent {{ book.title }}</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #42abbc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .rent-container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .rent-container h1 {
+      color: #0a012d;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .rent-container p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .rent-container a {
+      display: inline-block;
+      text-decoration: none;
+      background: #e94e3c;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .rent-container a:hover {
+      background: #c43b2b;
+      transform: scale(1.05);
+    }
+
+    @media(max-width: 600px){
+      .rent-container {
+        padding: 20px;
+        width: 90%;
+      }
+
+      .rent-container h1 {
+        font-size: 24px;
+      }
+
+      .rent-container p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rent-container">
+    <h1>Rent "{{ COA.title }}"</h1>
+    <p>Rent Price: ₹{{ book.rent_price }} / week</p>
+    <a href="{% url 'books' %}">← Back to Books</a>
+  </div>
+
+</body>
+</html>

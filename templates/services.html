@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Resource Sharing Platform</title>
+    <style>
+        /* Reset default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #42abbc, #2b6b70);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.3em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #368a94;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #2b6b70;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            color: #42abbc;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #42abbc;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta a {
+            text-decoration: none;
+            background-color: #42abbc;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background-color: #2b6b70;
+        }
+
+        footer {
+            background-color: #368a94;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .intro h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Services</h1>
+        <p>Making educational resources accessible and affordable for every student</p>
+    </header>
+
+    <nav>
+        {% load static %}
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutpage' %}">About</a>
+        <a href="{% url 'community' %}">Community</a>
+        <a href="{% url 'services' %}">Services</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <h2>What We Offer</h2>
+            <p>
+                Resource Sharing Platform provides a range of services aimed at helping college students access essential study materials. 
+                We focus on affordability, collaboration, and convenience, ensuring that financially weak students have equal opportunities to succeed.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Resource Lending</h3>
+                <p>Borrow books, notebooks, laptops, calculators, and other essential items from fellow students or the platform at affordable rates.</p>
+            </div>
+            <div class="service-card">
+                <h3>Resource Sharing</h3>
+                <p>Students can share their extra resources with peers, creating a collaborative environment that reduces waste and increases access.</p>
+            </div>
+            <div class="service-card">
+                <h3>Student Support</h3>
+                <p>Our platform provides assistance to financially weak students by connecting them to available resources quickly and efficiently.</p>
+            </div>
+            <div class="service-card">
+                <h3>Request & Offer System</h3>
+                <p>Students can post requests for items they need or offer items they no longer use, making the system dynamic and inclusive.</p>
+            </div>
+            <div class="service-card">
+                <h3>Community Collaboration</h3>
+                <p>Encourages interaction between students through discussions, notes sharing, and mutual help, building a strong educational community.</p>
+            </div>
+            <div class="service-card">
+                <h3>Easy Access</h3>
+                <p>Our intuitive platform allows students to browse, request, or lend resources easily, ensuring convenience and efficiency.</p>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="{% url 'register' %}">Get Started Today</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Resource Sharing Platform. All rights reserved.
+    </footer>
+
+</body>
+</html>
