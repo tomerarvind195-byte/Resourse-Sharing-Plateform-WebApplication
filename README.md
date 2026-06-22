@@ -133,6 +133,7 @@ study-platform/
 │   └── contact.html
 │   └── search.html
 │   └── Login.html
+|   └── other etc.
 |   
 │
 └── static/                  # CSS, JS, Images
