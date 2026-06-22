@@ -139,6 +139,7 @@ study-platform/
     ├── css/
     ├── js/
     └── images/
+    |__ other /
 ```
 
 ---
