@@ -1,3 +1,4 @@
+
 # 📚 Study Materials Sharing Platform
 
 > A full-stack web platform for sharing and discovering study resources — built with Django, MySQL, and JavaScript.
@@ -130,6 +131,8 @@ study-platform/
 │   ├── home.html
 │   ├── resources.html
 │   └── contact.html
+│   └── search.html
+|   
 │
 └── static/                  # CSS, JS, Images
     ├── css/
