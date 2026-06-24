@@ -21,14 +21,32 @@
 ## 📸 Screenshots
 
 > _(Apne project ke screenshots yahan add karo — Home page, Resources page, Contact page)_
+# 📸 Application Screenshots
 
-| Home Page | Resources Page | Contact Page |
-|-----------|---------------|--------------|
-| ![Home](<img width="1763" height="1977" alt="image" src="https://github.com/user-attachments/assets/901040d7-bb08-4d2e-a53d-5eb18e8c0f07" />
-) | ![Resources](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f2690ec7-5ebb-43fc-9c81-42c569379d12" /><img width="1920" height="1080" alt="Screenshot 2026-06-24 111253" src="https://github.com/user-attachments/assets/6366a46e-3530-4822-ad25-f5b81951f069" /><img width="1763" height="2427" alt="image" src="https://github.com/user-attachments/assets/4484a84e-d27e-47a9-9fa8-9ee460fc9275" /><img width="1763" height="2420" alt="image" src="https://github.com/user-attachments/assets/86d80c71-40e3-42c5-9b31-be2cffdff8d8" />
-) | ![Contact](
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6269d4f-ee5c-4260-95b4-5fff611b8abe" />
-) |
+## 🏠 Home Page
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/901040d7-bb08-4d2e-a53d-5eb18e8c0f07" width="850"/>
+</p>
+
+---
+
+## 📚 Resources Page
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f2690ec7-5ebb-43fc-9c81-42c569379d12" width="850"/><br><br>
+  <img src="https://github.com/user-attachments/assets/6366a46e-3530-4822-ad25-f5b81951f069" width="850"/><br><br>
+  <img src="https://github.com/user-attachments/assets/4484a84e-d27e-47a9-9fa8-9ee460fc9275" width="850"/><br><br>
+  <img src="https://github.com/user-attachments/assets/86d80c71-40e3-42c5-9b31-be2cffdff8d8" width="850"/>
+</p>
+
+---
+
+## 📞 Contact Page
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b6269d4f-ee5c-4260-95b4-5fff611b8abe" width="850"/>
+</p>
 
 ---
 
