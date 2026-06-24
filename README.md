@@ -24,7 +24,7 @@
 
 | Home Page | Resources Page | Contact Page |
 |-----------|---------------|--------------|
-| ![Home](screenshots/home.png) | ![Resources](screenshots/resources.png) | ![Contact](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/484c3c2e-4dd6-499f-ab7c-9def516be0c4" />
+| ![Home](screenshots/home.png) | ![Resources](screenshots/resources.png) | ![Contact](
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6269d4f-ee5c-4260-95b4-5fff611b8abe" />
 ) |
 
