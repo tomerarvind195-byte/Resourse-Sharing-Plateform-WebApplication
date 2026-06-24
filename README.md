@@ -18,9 +18,7 @@
 
 ---
 
-## 📸 Screenshots
 
-> _(Apne project ke screenshots yahan add karo — Home page, Resources page, Contact page)_
 # 📸 Application Screenshots
 
 ## 🏠 Home Page
