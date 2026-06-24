@@ -24,7 +24,7 @@
 
 | Home Page | Resources Page | Contact Page |
 |-----------|---------------|--------------|
-| ![Home](screenshots/home.png) | ![Resources](<img width="910" height="450" alt="image" src="https://github.com/user-attachments/assets/f2690ec7-5ebb-43fc-9c81-42c569379d12" /><img width="1920" height="1080" alt="Screenshot 2026-06-24 111253" src="https://github.com/user-attachments/assets/6366a46e-3530-4822-ad25-f5b81951f069" />
+| ![Home](screenshots/home.png) | ![Resources](<img width="910" height="450" alt="image" src="https://github.com/user-attachments/assets/f2690ec7-5ebb-43fc-9c81-42c569379d12" /><img width="1920" height="1080" alt="Screenshot 2026-06-24 111253" src="https://github.com/user-attachments/assets/6366a46e-3530-4822-ad25-f5b81951f069" /><img width="1763" height="2427" alt="image" src="https://github.com/user-attachments/assets/4484a84e-d27e-47a9-9fa8-9ee460fc9275" /><img width="1763" height="2420" alt="image" src="https://github.com/user-attachments/assets/86d80c71-40e3-42c5-9b31-be2cffdff8d8" />
 ) | ![Contact](
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b6269d4f-ee5c-4260-95b4-5fff611b8abe" />
 ) |
