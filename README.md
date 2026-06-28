@@ -85,7 +85,7 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
-## Services 
+## Services   
 
 <p align="center">
   <img width="1763" height="1130" alt="image" src="https://github.com/user-attachments/assets/ea5729e6-8a21-4d20-bfcf-92f5dc3b8938" />
@@ -95,7 +95,7 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
-## Community
+## Community 
 
 <p align="center">
   <img width="1763" height="1113" alt="image" src="https://github.com/user-attachments/assets/343aa047-e2cd-428c-92e5-b2e127844b49" />
