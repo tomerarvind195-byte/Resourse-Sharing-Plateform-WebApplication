@@ -14,7 +14,9 @@
 
 ## 🔗 Live Demo
 
-> 🌐 **[[Add your deployed link here](https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/)]** ← (Render / Railway / PythonAnywhere pe deploy karo)
+> 🌐 **[[## 🔗 Live Demo
+
+> 🌐 **[[Add your deployed link here](https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/)]** ← (Render / Railway / PythonAnywhere pe deploy karo)]]** ← (Render / Railway / PythonAnywhere pe deploy karo)
 
 ---
 
