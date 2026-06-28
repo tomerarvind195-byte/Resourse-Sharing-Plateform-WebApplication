@@ -53,8 +53,8 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 ## Borrow item
 
 <p align="center">
-  <img src="<img width="1763" height="1126" alt="image" src="https://github.com/user-attachments/assets/69e4b647-3d60-46b1-ae03-44ee3c8fab4d" />
-" width="850"/>
+  <img width="1763" height="1126" alt="image" src="https://github.com/user-attachments/assets/69e4b647-3d60-46b1-ae03-44ee3c8fab4d" />
+
 </p>
 
 ---
