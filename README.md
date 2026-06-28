@@ -50,10 +50,11 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
-## 📞 Contact Page
+## Borrow item
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b6269d4f-ee5c-4260-95b4-5fff611b8abe" width="850"/>
+  <img src="<img width="1763" height="1126" alt="image" src="https://github.com/user-attachments/assets/69e4b647-3d60-46b1-ae03-44ee3c8fab4d" />
+" width="850"/>
 </p>
 
 ---
