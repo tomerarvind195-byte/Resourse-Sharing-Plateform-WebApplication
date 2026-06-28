@@ -95,10 +95,11 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
-## Community 
+## Registration page 
 
 <p align="center">
-  <img width="1763" height="1113" alt="image" src="https://github.com/user-attachments/assets/343aa047-e2cd-428c-92e5-b2e127844b49" />
+<img width="1763" height="991" alt="image" src="https://github.com/user-attachments/assets/46bb509c-1be9-4479-80c8-166080a77c9c" />
+
 
 
 </p>
