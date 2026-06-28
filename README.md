@@ -14,9 +14,10 @@
 
 ## 🔗 Live Demo
 
-> 🌐 **[[## 🔗 Live Demo
+🌐 **Live Website:**  
+https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 
-> 🌐 **[[Add your deployed link here](https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/)]** ← (Render / Railway / PythonAnywhere pe deploy karo)]]** ← (Render / Railway / PythonAnywhere pe deploy karo)
+> **Note:** This GitHub Pages deployment showcases the frontend only. For the complete Django application with backend functionality, deploy the project on Render, Railway, or PythonAnywhere.
 
 ---
 
