@@ -1,7 +1,7 @@
 
 # 📚 Study Materials Sharing Platform
 
-> A full-stack web platform for sharing and discovering study resources — built with Django, MySQL, and JavaScript.
+> A full-stack web platform for sharing and discovering study resources  — built with Django, MySQL, and JavaScript etc.
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python)
 ![Django](https://img.shields.io/badge/Django-4.x-green?style=flat&logo=django)
