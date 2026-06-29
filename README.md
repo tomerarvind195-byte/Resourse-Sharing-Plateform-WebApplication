@@ -102,7 +102,7 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
-## Share item 
+## Share item Confirm page
 
 <p align="center">
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2fc27b68-8e53-4709-b921-b69649e314f2" />
