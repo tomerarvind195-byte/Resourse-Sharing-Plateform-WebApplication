@@ -254,7 +254,7 @@ Contributions are welcome! Feel free to:
 - 💻 [GitHub](https://github.com/tomerarvind195-byte)
 - 📧 tomerarvind195@gmail.com
 
----
+-----
 
 ## 📄 License
 
