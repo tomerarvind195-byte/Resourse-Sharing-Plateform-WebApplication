@@ -102,6 +102,14 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 </p>
 
 ---
+## Share item 
+
+<p align="center">
+  <img width="1763" height="1234" alt="image" src="https://github.com/user-attachments/assets/544ec225-c7ae-4f52-bb6a-c0870be7d559" />
+
+</p>
+
+---
 
 ## 📋 About The Project
 
