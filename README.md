@@ -125,7 +125,7 @@ https://tomerarvind195-byte.github.io/Resourse-Sharing-Plateform-WebApplication/
 
 ## 📋 About The Project
 
-A **full-stack web application** that allows students to upload, browse, and share academic study materials across multiple categories. Built to solve the problem of scattered resources by centralizing them in one easy-to-access platform.
+A **full-stack web application** that allows students to upload, browse, and share academic study materials across multiple categories. Built to solve the problem of scattered resources by centralizing them in one easy-to-access platform.we provide good quality study meterials.
 
 **Key Highlights:**
 - 50+ categorized study materials hosted on the platform
