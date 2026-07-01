@@ -1,5 +1,5 @@
 
-# 📚 Study Materials Sharing Platform
+# 📚 Study Materials Sharing Web Platform
 
 > A full-stack web platform for sharing and discovering study resources  — built with Django, MySQL, and JavaScript etc.
 
