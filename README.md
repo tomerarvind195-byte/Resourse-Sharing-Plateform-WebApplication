@@ -140,7 +140,7 @@ A **full-stack web application** that allows students to upload, browse, and sha
 
 - ✅ Browse and download study materials by category
 - ✅ Dynamic content management via Django admin panel
-- ✅ Multi-section navigation (Home, Resources, Contact)
+- ✅ Multi-section navigation (Home, Resources, Contact, services, borrow item, share item, search 🔍)
 - ✅ Responsive design — works on mobile, tablet, and desktop
 - ✅ MySQL database for structured data storage
 - ✅ Fast and lightweight frontend with vanilla JavaScript
